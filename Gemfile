@@ -9,6 +9,10 @@ gem "rails", "~> 7.0.8"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
+#Adding bootstrap and sassc
+gem "bootstrap"
+gem "sassc-rails"
+
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 
