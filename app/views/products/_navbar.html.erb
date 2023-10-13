@@ -1,5 +1,5 @@
-<div class="container-flouid">
-  <nav class="navbar navbar-expand-lg bg-light">
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg custom-main-nav">
     <div class="container">
       <a class="navbar-brand" href="/">
         <h3>Delion</h3>
@@ -9,6 +9,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+         <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Member</a>
           </li>
@@ -22,12 +25,28 @@
             <a class="nav-link active" aria-current="page" href="#">Event</a>
           </li>
         </ul>
-        <form class="">
-          <%= link_to "Login", products_index_path, class: "btn btn-outline-primary mr-2" %>
-          <%# <a class="btn btn-outline-primary mr-2" href="#">Login</a> %>
-          <a class="btn btn-outline-success" href="#">Sign Up</a>
+        <form>
+          <% if user_signed_in? %>
+            <span class="mr-2">Welcome, <%= current_user.email %></span>
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure you want to log out?" }, class: "btn btn-outline-danger", id: "logout-link" %>
+          <% else %>
+            <%= link_to "Sign Up", new_user_registration_path, class: "btn mr-2  text-dark btn-custom" %>
+            <%= link_to "Login", new_user_session_path, class: "btn mr-2" %>
+          <% end %>
         </form>
       </div>
     </div>
   </nav>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('#logout-link').click(function() {
+      // Redirect to the login page after a short delay (you can adjust the delay time)
+      setTimeout(function() {
+        window.location.href = "<%= new_user_session_path %>";
+      }, 100); // Delay in milliseconds (1 second in this example)
+    });
+  });
+</script>

@@ -11,6 +11,8 @@ gem "sprockets-rails"
 
 #Adding bootstrap and sassc
 gem "bootstrap"
+gem 'jquery-rails'
+
 gem "sassc-rails"
 
 # Use postgresql as the database for Active Record
@@ -74,3 +76,5 @@ group :test do
   gem "selenium-webdriver"
 
 end
+
+gem "devise", "~> 4.9"

@@ -1,0 +1,32 @@
+/* 
+.custom-background {
+    background: url('https://images.pexels.com/photos/1435598/pexels-photo-1435598.jpeg?auto=compress&cs=tinysrgb&w=1600') no-repeat center center fixed;
+    background-size: cover;
+    height: 300px;
+  }
+   */
+.custom-background {
+  height: 500px;
+  background-color: #eac696;
+}
+.custom-card-image {
+  background-color: #c8ae7d;
+}
+.custom-main-nav {
+  background-color: #c8ae7d;
+}
+.btn-custom {
+  /* background-color: #765827; */
+  cursor: pointer;
+}
+.btn-custom:hover {
+  background-color: #fff;
+  color: white;
+}
+.btn-register-custom{
+    background-color: #e3b866;
+    color: #e3b866;
+    width: 200px;
+    max-width: 100%;
+    border-radius: 25px;
+}
